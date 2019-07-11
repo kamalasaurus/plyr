@@ -115,7 +115,7 @@ typeof navigator === "object" && (function (global, factory) {
       return Array.from(document.querySelectorAll(selector)).includes(this);
     }
 
-    var matches = match;
+    var matches =  match;
     return matches.call(element, selector);
   }
 
@@ -576,7 +576,7 @@ typeof navigator === "object" && (function (global, factory) {
   var browser = {
     isIE:
     /* @cc_on!@ */
-    !!document.documentMode,
+     !!document.documentMode,
     isEdge: window.navigator.userAgent.includes('Edge'),
     isWebkit: 'WebkitAppearance' in document.documentElement.style && !/Edge/.test(navigator.userAgent),
     isIPhone: /(iPhone|iPod)/gi.test(navigator.platform),
@@ -983,7 +983,7 @@ typeof navigator === "object" && (function (global, factory) {
       return Array.from(document.querySelectorAll(selector)).includes(this);
     }
 
-    var method = match;
+    var method =  match;
     return method.call(element, selector);
   } // Find all elements
 
@@ -993,6 +993,9 @@ typeof navigator === "object" && (function (global, factory) {
 
   function getElement(selector) {
     return this.elements.container.querySelector(selector);
+  }
+  function getContainer(selector) {
+    return this.elements.container;
   } // Trap focus inside container
 
   function trapFocus() {
@@ -1727,7 +1730,8 @@ typeof navigator === "object" && (function (global, factory) {
           airplay: getElement.call(this, this.config.selectors.buttons.airplay),
           settings: getElement.call(this, this.config.selectors.buttons.settings),
           captions: getElement.call(this, this.config.selectors.buttons.captions),
-          fullscreen: getElement.call(this, this.config.selectors.buttons.fullscreen)
+          //fullscreen: getElement.call(this, this.config.selectors.buttons.fullscreen),
+          fullscreen: getContainer.call(this, this.config.selectors.buttons.fullscreen)
         }; // Progress
 
         this.elements.progress = getElement.call(this, this.config.selectors.progress); // Inputs

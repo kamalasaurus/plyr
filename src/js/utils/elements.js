@@ -248,6 +248,10 @@ export function getElement(selector) {
     return this.elements.container.querySelector(selector);
 }
 
+export function getContainer(selector) {
+    return this.elements.container;
+}
+
 // Trap focus inside container
 export function trapFocus(element = null, toggle = false) {
     if (!is.element(element)) {

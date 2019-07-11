@@ -15,6 +15,7 @@ import {
     createElement,
     emptyElement,
     getAttributesFromSelector,
+    getContainer,
     getElement,
     getElements,
     hasClass,
@@ -63,7 +64,8 @@ const controls = {
                 airplay: getElement.call(this, this.config.selectors.buttons.airplay),
                 settings: getElement.call(this, this.config.selectors.buttons.settings),
                 captions: getElement.call(this, this.config.selectors.buttons.captions),
-                fullscreen: getElement.call(this, this.config.selectors.buttons.fullscreen),
+                //fullscreen: getElement.call(this, this.config.selectors.buttons.fullscreen),
+                fullscreen: getContainer.call(this, this.config.selectors.buttons.fullscreen),
             };
 
             // Progress
